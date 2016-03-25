@@ -1,0 +1,15 @@
+<h1>Welcome to USER PROFILE</h1>
+<h4>Done:</h4>
+<div ng-controller='usersController'>
+  <div ng-repeat='trip in trips'>
+    <input type="checkbox" ng-click='IsChecked(trip)'>
+    {{trip.friend}} | {{trip.title}} - {{trip.description}}...- {{trip.created | date:'MMMM dd, yyyy'}}
+  </div>
+<hr>
+<h4>Pending:</h4>
+  <div ng-repeat='trip in trips | filter:{isDone:true}'>
+    <input type="checkbox">
+    {{trip.friend}} | {{trip.title}} - {{trip.description}}...- {{trip.created | date:'MMMM dd, yyyy'}}
+  </div>
+
+</div>
