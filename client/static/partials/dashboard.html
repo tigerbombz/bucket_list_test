@@ -17,16 +17,16 @@
   </form>
 <hr>
 <h4>Before I die I want to...</h4>
-<div ng-repeat='trip in trips'>
+<p ng-repeat='trip in trips'>
   <input type="checkbox">
   {{trip.friend}} | {{trip.title}} - {{trip.description}}...- {{trip.created | date:'MMMM dd, yyyy'}}
+</p>
 <hr>
 <h4>List of other user (CLICK TO VIEW PROFILE)</h4>
 
 <ul>
   <li ng-repeat='login in logins'>
-    <a href="#/partial3/{{trip.UserId}}">{{login.name}}</a>
+    <a href="#/partial3/{{login._id}}">{{login.name}}</a>
   </li>
 <ul>
-</div>
 </div>

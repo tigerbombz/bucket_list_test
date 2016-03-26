@@ -61,7 +61,9 @@
       var factory = {};
 
       factory.index = function(callback){
-        $http.get('/trips').success(function (output){
+        var fragments = window.location.hash.split('/');
+        var userId = fragments[fragments.length - 1];
+        $http.get('/trips?user_id=' + userId).success(function (output){
           output.forEach(function(trip){
             var timestamp = trip._id.toString().substring(0,8);
             trip.created = new Date(parseInt(timestamp, 16 ) * 1000);
@@ -80,7 +82,7 @@
       }
       return factory
     })
-    //END OF TOPIC FACTORY
+    //END OF TRIP FACTORY
 
 
     //LOGIN CONTROLLER
